@@ -265,7 +265,7 @@
       }
 
       // Usuario no logueado
-      if (!sesion.token || !sesion.userData) {
+      if (!sesion || !sesion.token || !sesion.id) {
         msgNoSesion.style.display = 'block';
         return;
       }
@@ -277,7 +277,7 @@
         return;
       }
 
-      const userId = sesion.userData.id || sesion.userData.user_id;
+      const userId = sesion.id;
 
       // Verificar estado de inscripción
       let inscrito = false;
